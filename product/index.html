@@ -10,24 +10,25 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%232D4BD8'/><rect x='12' y='18' width='26' height='8' rx='4' fill='%23F2C94C'/><rect x='22' y='30' width='30' height='8' rx='4' fill='white'/><rect x='12' y='42' width='18' height='8' rx='4' fill='white' opacity='.6'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#EEF1EC; --surface:#FAFBF9; --ink:#18201D; --muted:#56615C; --line:#D3D9D4;
   --cobalt:#2D4BD8; --cobalt-ink:#fff; --hl:#F2C94C; --hl-soft:#F8E7A6; --sage:#B9C8BE;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
+  --script:"Great Vibes","Snell Roundhand","Apple Chancery",cursive;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#141917; --surface:#1C2320; --ink:#E7ECE8; --muted:#9AA6A0; --line:#2E3733;
-    --cobalt:#7F94FF; --cobalt-ink:#0E1330; --hl:#E8C04A; --hl-soft:#4A4120; --sage:#4E6156; color-scheme:dark;
+    --bg:#12151F; --surface:#1A1F2E; --ink:#ECEEF4; --muted:#A1A8BC; --line:#2B3246;
+    --cobalt:#93A6FF; --cobalt-ink:#10152B; --hl:#F4C95D; --hl-soft:#4A3F22; --sage:#4A5675; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#141917; --surface:#1C2320; --ink:#E7ECE8; --muted:#9AA6A0; --line:#2E3733;
-  --cobalt:#7F94FF; --cobalt-ink:#0E1330; --hl:#E8C04A; --hl-soft:#4A4120; --sage:#4E6156; color-scheme:dark;
+  --bg:#12151F; --surface:#1A1F2E; --ink:#ECEEF4; --muted:#A1A8BC; --line:#2B3246;
+  --cobalt:#93A6FF; --cobalt-ink:#10152B; --hl:#F4C95D; --hl-soft:#4A3F22; --sage:#4A5675; color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -43,7 +44,7 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.015em;font-
 .bar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
 .bar.scrolled{border-bottom-color:var(--line)}
 .bar-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.name{font-family:var(--display);font-weight:800;font-size:19px;text-decoration:none;letter-spacing:-.01em;font-variation-settings:"wdth" 80}
+.name{font-family:var(--display);font-weight:800;font-size:23px;text-decoration:none;letter-spacing:-.01em;font-variation-settings:"wdth" 80}
 .links{display:flex;align-items:center;gap:2px}
 .links a{text-decoration:none;font-size:15.5px;padding:8px 11px;color:var(--muted);border-radius:8px;transition:color .15s}
 .links a:hover{color:var(--ink)}
@@ -60,7 +61,8 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.015em;font-
 .hero{padding-top:64px}
 .status{font-size:15.5px;color:var(--muted);display:flex;align-items:center;gap:10px}
 .status::before{content:"";width:9px;height:9px;border-radius:50%;background:#2E9B5F;box-shadow:0 0 0 4px color-mix(in srgb,#2E9B5F 22%,transparent)}
-h1{font-size:clamp(42px,6.6vw,80px);line-height:1;margin-top:22px;max-width:15ch;font-weight:750;font-variation-settings:"wdth" 82;letter-spacing:-.025em}
+h1{font-size:clamp(50px,8.4vw,104px);line-height:.95;margin-top:20px;font-weight:800;font-variation-settings:"wdth" 80;letter-spacing:-.03em}
+.tagline{font-family:var(--script);font-weight:400;font-size:clamp(38px,5.4vw,66px);line-height:1.12;margin-top:14px;max-width:20ch;color:var(--cobalt)}
 .lede{font-size:clamp(18px,2vw,20px);max-width:58ch;margin-top:24px;color:var(--muted);line-height:1.6}
 .lede strong{color:var(--ink);font-weight:700}
 .rot{color:var(--ink);font-weight:700;background:linear-gradient(transparent 62%,var(--hl) 62%,var(--hl) 92%,transparent 92%);transition:opacity .3s,transform .3s;display:inline-block}
@@ -251,7 +253,8 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding:22px 0 36px;font
 <main id="top">
   <div class="wrap hero">
     <p class="status">Based in Dallas, open to product manager roles in AI.</p>
-    <h1>I turn ambiguous asks into products people can trust.</h1>
+    <h1>Kanka Kulkarni</h1>
+    <p class="tagline">I turn ambiguous asks into products people can trust.</p>
     <p class="lede">I’ve taken <strong>enterprise SaaS and AI products</strong> from requirements to launch at Infosys and Tango Analytics. Hands-on with AI, I <span class='rot' id='rot'>prototype with Claude Code</span>.</p>
     <div class="actions">
       <a class="btn primary" href="mailto:kulkarnikanka@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
@@ -426,7 +429,7 @@ const PROJECTS = [
 const EDU = [{"logo": "duke", "title": "Duke University, Fuqua School of Business", "sub": "MS, Business Analytics", "dates": "Jul 2022 to May 2023"}, {"logo": "kjs", "title": "K J Somaiya Institute of Management", "sub": "MBA, Finance", "dates": "Jul 2016 to Apr 2018"}, {"logo": "vit", "title": "Vishwakarma Institute of Technology", "sub": "B.Tech, Electronics Engineering", "dates": "Jul 2012 to May 2016"}];
 const CAPS = [{"t": "Product", "d": "Turning ambiguous asks into clear, testable scope.", "i": ["PRDs and BRDs", "Requirements gathering", "Roadmapping and prioritization", "User research", "Competitive analysis", "Go-to-market", "Customer feedback loops"]}, {"t": "AI and LLMs", "d": "Building and evaluating LLM systems, hands-on.", "i": ["LLM evaluation and LLM-as-a-judge", "AI agents", "Prompt engineering", "Hallucination mitigation", "AI safety evaluation", "Open-weight models on-device"]}, {"t": "Data and analytics", "d": "Enough code to prototype, measure and prove it.", "i": ["SQL", "Python and R", "Experiment design", "Statistical testing", "Machine learning and NLP", "Tableau and Power BI"]}];
 const TOOLS = ["Claude Code", "Codex", "OpenAI API", "Git", "Jira", "Figma", "Lovable", "Tableau", "Power BI", "Excel"];
-const LOGOS = {"infosys": {"f": "infosys.png", "name": "Infosys"}, "vit": {"f": "vit.png", "name": "Vishwakarma Institute of Technology"}, "llif": {"f": "llif.png", "name": "LLIF"}, "tango": {"f": "tango.png", "name": "Tango Analytics"}, "kjs": {"f": "kjs.png", "name": "K J Somaiya Institute of Management"}, "duke": {"f": "duke.png", "name": "Duke University"}};
+const LOGOS = {"kjs": {"f": "kjs.png", "name": "K J Somaiya Institute of Management"}, "vit": {"f": "vit.png", "name": "Vishwakarma Institute of Technology"}, "llif": {"f": "llif.png", "name": "LLIF"}, "tango": {"f": "tango.png", "name": "Tango Analytics"}, "duke": {"f": "duke.png", "name": "Duke University"}, "infosys": {"f": "infosys.png", "name": "Infosys"}};
 const WORDS = ["prototype with Claude Code", "run LLM evaluations", "ship AI features people can trust"];
 const ROADMAP = [{"lane": "edu", "start": 2012.5, "end": 2016.4, "label": "VIT Pune", "title": "Vishwakarma Institute of Technology", "sub": "B.Tech, Electronics Engineering", "when": "2012 to 2016", "go": "vit", "logo": "vit", "row": 0, "point": false}, {"lane": "edu", "start": 2016.5, "end": 2018.3, "label": "K J Somaiya", "title": "K J Somaiya Institute of Management", "sub": "MBA, Finance", "when": "2016 to 2018", "go": "kjs", "logo": "kjs", "row": 0, "point": false}, {"lane": "edu", "start": 2022.5, "end": 2023.4, "label": "Duke", "title": "Duke University, Fuqua School of Business", "sub": "MS, Business Analytics", "when": "2022 to 2023", "go": "duke", "logo": "duke", "row": 0, "point": false}, {"lane": "work", "start": 2018.45, "end": 2022.4, "label": "Infosys", "title": "Infosys", "sub": "Business Analyst, then Technical Product Manager", "when": "2018 to 2022", "go": "infosys", "logo": "infosys", "row": 0, "point": false}, {"lane": "work", "start": 2023.5, "end": 2023.8, "label": "LLIF", "title": "LLIF", "sub": "Product Manager, mobile app (volunteer)", "when": "2023", "go": "llif", "logo": "llif", "row": 1, "point": false}, {"lane": "work", "start": 2023.78, "end": "now", "label": "Tango Analytics", "title": "Tango Analytics", "sub": "AI Product Strategy Intern, then Senior Consultant", "when": "2023 to now", "go": "tango", "logo": "tango", "row": 0, "point": false}, {"lane": "res", "start": 2026.55, "end": 2026.55, "label": "Paper under review", "title": "Is that still true?", "sub": "Paper under review at NAACL 2027", "when": "2026", "go": "#projects", "logo": null, "row": 0, "point": true}];
 
