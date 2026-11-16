@@ -60,15 +60,15 @@ h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.015em;font-
 /* ---------- hero ---------- */
 .hero{padding-top:64px}
 .status{font-size:15.5px;color:var(--muted);display:flex;align-items:center;gap:10px}
-.status::before{content:"";width:9px;height:9px;border-radius:50%;background:#2E9B5F;box-shadow:0 0 0 4px color-mix(in srgb,#2E9B5F 22%,transparent)}
+.status::before{content:"";flex-shrink:0;width:9px;height:9px;border-radius:50%;background:#2E9B5F;box-shadow:0 0 0 4px color-mix(in srgb,#2E9B5F 22%,transparent)}
 h1{font-size:clamp(50px,8.4vw,104px);line-height:.95;margin-top:20px;font-weight:800;font-variation-settings:"wdth" 80;letter-spacing:-.03em}
-.hero-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,330px);gap:48px;align-items:center}
+.hero-top{margin-top:8px;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,330px);gap:48px;align-items:center}
 .portrait{position:relative;margin:0;justify-self:end;width:100%}
 .portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;background:var(--hl);z-index:0}
 .portrait img{position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;border:1px solid var(--line)}
 @media (max-width:820px){
   .hero-top{grid-template-columns:1fr;gap:28px}
-  .portrait{order:-1;justify-self:start;width:168px}
+  .portrait{order:-1;justify-self:start;width:168px;margin-top:18px}
   .portrait::before{inset:10px -10px -10px 10px;border-radius:22px}
   .portrait img{border-radius:22px}
 }
@@ -268,9 +268,9 @@ footer{margin-top:72px;border-top:1px solid var(--line);padding:22px 0 36px;font
 
 <main id="top">
   <div class="wrap hero">
+   <p class="status">Based in Dallas and open to relocating. Looking for product manager&nbsp;roles&nbsp;in&nbsp;AI.</p>
    <div class="hero-top">
     <div class="hero-text">
-    <p class="status">Based in Dallas and open to relocating. Looking for product manager roles in AI.</p>
     <h1>Kanka Kulkarni</h1>
     <p class="tagline">I turn ambiguous asks into products people can trust.</p>
     <p class="lede">I’ve taken <strong>enterprise SaaS and AI products</strong> from requirements to launch at Infosys and Tango Analytics. <span class='ai-line'>Hands-on with AI, I <span class='rot' id='rot'>prototype with Claude Code</span>.</span></p>
@@ -450,7 +450,7 @@ const PROJECTS = [
 const EDU = [{"logo": "duke", "title": "Duke University, Fuqua School of Business", "sub": "MS, Business Analytics", "dates": "Jul 2022 to May 2023"}, {"logo": "kjs", "title": "K J Somaiya Institute of Management", "sub": "MBA, Finance", "dates": "Jul 2016 to Apr 2018"}, {"logo": "vit", "title": "Vishwakarma Institute of Technology", "sub": "B.Tech, Electronics Engineering", "dates": "Jul 2012 to May 2016"}];
 const CAPS = [{"t": "Product", "d": "Turning ambiguous asks into clear, testable scope.", "i": ["PRDs and BRDs", "Requirements gathering", "Roadmapping and prioritization", "User research", "Competitive analysis", "Go-to-market", "Customer feedback loops"]}, {"t": "AI and LLMs", "d": "Building and evaluating LLM systems, hands-on.", "i": ["LLM evaluation and LLM-as-a-judge", "AI agents", "Prompt engineering", "Hallucination mitigation", "AI safety evaluation", "Open-weight models on-device"]}, {"t": "Data and analytics", "d": "Enough code to prototype, measure and prove it.", "i": ["SQL", "Python and R", "Experiment design", "Statistical testing", "Machine learning and NLP", "Tableau and Power BI"]}];
 const TOOLS = ["Claude Code", "Codex", "OpenAI API", "Git", "Jira", "Figma", "Lovable", "Tableau", "Power BI", "Excel"];
-const LOGOS = {"duke": {"f": "duke.png", "name": "Duke University"}, "infosys": {"f": "infosys.png", "name": "Infosys"}, "vit": {"f": "vit.png", "name": "Vishwakarma Institute of Technology"}, "tango": {"f": "tango.png", "name": "Tango Analytics"}, "llif": {"f": "llif.png", "name": "LLIF"}, "kjs": {"f": "kjs.png", "name": "K J Somaiya Institute of Management"}};
+const LOGOS = {"tango": {"f": "tango.png", "name": "Tango Analytics"}, "vit": {"f": "vit.png", "name": "Vishwakarma Institute of Technology"}, "kjs": {"f": "kjs.png", "name": "K J Somaiya Institute of Management"}, "llif": {"f": "llif.png", "name": "LLIF"}, "duke": {"f": "duke.png", "name": "Duke University"}, "infosys": {"f": "infosys.png", "name": "Infosys"}};
 const WORDS = ["prototype with Claude Code", "run LLM evaluations", "ship trusted AI features"];
 const ROADMAP = [{"lane": "edu", "start": 2012.5, "end": 2016.4, "label": "VIT Pune", "title": "Vishwakarma Institute of Technology", "sub": "B.Tech, Electronics Engineering", "when": "2012 to 2016", "go": "vit", "logo": "vit", "row": 0, "point": false}, {"lane": "edu", "start": 2016.5, "end": 2018.3, "label": "K J Somaiya", "title": "K J Somaiya Institute of Management", "sub": "MBA, Finance", "when": "2016 to 2018", "go": "kjs", "logo": "kjs", "row": 0, "point": false}, {"lane": "edu", "start": 2022.5, "end": 2023.4, "label": "Duke", "title": "Duke University, Fuqua School of Business", "sub": "MS, Business Analytics", "when": "2022 to 2023", "go": "duke", "logo": "duke", "row": 0, "point": false}, {"lane": "work", "start": 2018.45, "end": 2022.4, "label": "Infosys", "title": "Infosys", "sub": "Business Analyst, then Technical Product Manager", "when": "2018 to 2022", "go": "infosys", "logo": "infosys", "row": 0, "point": false}, {"lane": "work", "start": 2023.5, "end": 2023.8, "label": "LLIF", "title": "LLIF", "sub": "Product Manager, mobile app (volunteer)", "when": "2023", "go": "llif", "logo": "llif", "row": 1, "point": false}, {"lane": "work", "start": 2023.78, "end": "now", "label": "Tango Analytics", "title": "Tango Analytics", "sub": "AI Product Strategy Intern, then Senior Consultant", "when": "2023 to now", "go": "tango", "logo": "tango", "row": 0, "point": false}, {"lane": "res", "start": 2026.55, "end": 2026.55, "label": "Paper under review", "title": "Is that still true?", "sub": "Paper under review at NAACL 2027", "when": "2026", "go": "#projects", "logo": null, "row": 0, "point": true}];
 
